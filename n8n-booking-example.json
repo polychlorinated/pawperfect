@@ -1,0 +1,192 @@
+{
+  "name": "Create Booking via PetBoarder API",
+  "nodes": [
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://dog-care-manager-polychlorinated.replit.app/api/bookings",
+        "authentication": "basicAuth",
+        "username": "=admin",
+        "password": "=admin_password",
+        "options": {},
+        "bodyParametersUi": {
+          "parameter": [
+            {
+              "name": "ownerId",
+              "value": "1"
+            },
+            {
+              "name": "petId",
+              "value": "1"
+            },
+            {
+              "name": "serviceId",
+              "value": "svc_boarding_standard"
+            },
+            {
+              "name": "startDate",
+              "value": "=new Date().toISOString().split('T')[0]"
+            },
+            {
+              "name": "endDate",
+              "value": "=new Date(new Date().setDate(new Date().getDate() + 3)).toISOString().split('T')[0]"
+            },
+            {
+              "name": "status",
+              "value": "pending"
+            },
+            {
+              "name": "startTime",
+              "value": "09:00"
+            },
+            {
+              "name": "notes",
+              "value": "Booking created through n8n automation"
+            }
+          ]
+        }
+      },
+      "name": "Create Booking",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        700,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## PawPerfect API Booking Workflow\n\nThis simple workflow demonstrates how to create a booking through the PawPerfect API.\n\n1. The URL is already set to your application URL: https://dog-care-manager-polychlorinated.replit.app\n2. Set the correct username/password for an admin user\n3. Update owner ID, pet ID and service ID values",
+        "height": 213.99999618530273,
+        "width": 483.9999885559082
+      },
+      "name": "Instructions",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        480,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 10
+            }
+          ]
+        }
+      },
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.success }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "name": "IF Successful",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        940,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "channel": "slack",
+        "text": "=Booking created successfully: {{ $json.data.bookingId }}",
+        "attachments": []
+      },
+      "name": "Send Success Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "channel": "slack",
+        "text": "=Booking creation failed: {{ $json.error.message }}",
+        "attachments": []
+      },
+      "name": "Send Error Notification",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 1,
+      "position": [
+        1180,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create Booking",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Booking": {
+      "main": [
+        [
+          {
+            "node": "IF Successful",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF Successful": {
+      "main": [
+        [
+          {
+            "node": "Send Success Notification",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Error Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "tags": [
+    {
+      "name": "PawPerfect"
+    },
+    {
+      "name": "API"
+    }
+  ],
+  "staticData": null,
+  "pinData": {}
+}

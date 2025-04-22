@@ -1,0 +1,12 @@
+{
+  "name": "pawperfect-deployment",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "replit-deploy-server.js",
+  "scripts": {
+    "start": "node replit-deploy-server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
