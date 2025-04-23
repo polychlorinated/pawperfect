@@ -346,7 +346,7 @@ export default function Booking() {
           <CardContent className="p-0">
             {/* Progress Bar */}
             {currentStep <= 4 && (
-              <div className="px-4 py-5 sm:px-6 bg-gray-50 border-b border-gray-200">
+              <div className="px-4 py-5 sm:px-6 bg-gray-50 border-b border" style={{borderColor:"#e5e7eb"}}>
                 <Progress value={progressValue} className="h-2" />
                 <div className="mt-4 flex justify-between">
                   {STEPS.map((step) => (

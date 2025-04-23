@@ -7,7 +7,7 @@ export default function ApiDocs() {
     <div className="bg-gray-50 py-8 min-h-screen">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Card className="shadow-lg">
-          <CardHeader className="px-6 py-5 bg-gray-50 border-b border-gray-200">
+          <CardHeader className="px-6 py-5 bg-gray-50 border-b border" style={{borderColor:"#e5e7eb"}}>
             <div className="flex justify-between items-center">
               <div>
                 <CardTitle className="text-lg font-medium text-gray-900">API Documentation</CardTitle>
@@ -40,7 +40,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Login</h4>
                   <p className="mt-1 text-sm text-gray-500">Authenticate with the API using your credentials.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/login</span>
@@ -71,7 +71,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Get Current User</h4>
                   <p className="mt-1 text-sm text-gray-500">Retrieve the currently authenticated user.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/user</span>
@@ -94,7 +94,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Logout</h4>
                   <p className="mt-1 text-sm text-gray-500">End the current user session.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/logout</span>
@@ -121,7 +121,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Get All Services</h4>
                   <p className="mt-1 text-sm text-gray-500">Retrieve a list of all available services.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/services</span>
@@ -160,7 +160,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Get Service Details</h4>
                   <p className="mt-1 text-sm text-gray-500">Retrieve details for a specific service.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/services/{"{serviceId}"}</span>
@@ -215,7 +215,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Get Service Availability</h4>
                   <p className="mt-1 text-sm text-gray-500">Check availability for a specific service and date range.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/availability/{"{serviceId}"}</span>
@@ -304,7 +304,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Create Booking</h4>
                   <p className="mt-1 text-sm text-gray-500">Create a new booking for a service.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/bookings</span>
@@ -349,7 +349,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Get Booking Details</h4>
                   <p className="mt-1 text-sm text-gray-500">Retrieve details for a specific booking.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/bookings/{"{bookingId}"}</span>
@@ -428,7 +428,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Update Booking Status</h4>
                   <p className="mt-1 text-sm text-gray-500">Update the status of a booking.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-yellow-100 text-yellow-800 font-medium">PATCH</span>
                       <span className="ml-2 font-mono">/api/bookings/{"{bookingId}"}/status</span>
@@ -487,7 +487,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Create Owner</h4>
                   <p className="mt-1 text-sm text-gray-500">Create a new pet owner in the system.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/owners</span>
@@ -526,7 +526,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Update Owner</h4>
                   <p className="mt-1 text-sm text-gray-500">Update an existing owner's information.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-yellow-100 text-yellow-800 font-medium">PUT</span>
                       <span className="ml-2 font-mono">/api/owners/{"{id}"}</span>
@@ -593,7 +593,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">MCP Provider Info</h4>
                   <p className="mt-1 text-sm text-gray-500">Get information about the MCP provider and available contexts</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/mcp/info</span>
@@ -643,7 +643,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Request Context</h4>
                   <p className="mt-1 text-sm text-gray-500">Retrieve context data from the MCP provider</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/mcp/context</span>
@@ -687,7 +687,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Stream Context</h4>
                   <p className="mt-1 text-sm text-gray-500">Stream context data using Server-Sent Events (SSE)</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-blue-100 text-blue-800 font-medium">GET</span>
                       <span className="ml-2 font-mono">/api/mcp/context-stream</span>
@@ -760,7 +760,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Execute Tools</h4>
                   <p className="mt-1 text-sm text-gray-500">Execute MCP tools to perform actions in the system</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/mcp/messages</span>
@@ -824,7 +824,7 @@ export default function ApiDocs() {
                   <p className="mt-1 text-sm text-gray-500">Available tools for performing actions through the MCP API</p>
                   
                   <div className="mt-4 space-y-4">
-                    <div className="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <div className="bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                       <h5 className="text-base font-medium text-gray-900">book_appointment</h5>
                       <p className="mt-1 text-sm text-gray-500">Create a new booking for a pet service</p>
                       
@@ -874,7 +874,7 @@ export default function ApiDocs() {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <div className="bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                       <h5 className="text-base font-medium text-gray-900">check_availability</h5>
                       <p className="mt-1 text-sm text-gray-500">Query available time slots for a specific service and date range</p>
                       
@@ -914,7 +914,7 @@ export default function ApiDocs() {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <div className="bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                       <h5 className="text-base font-medium text-gray-900">create_customer</h5>
                       <p className="mt-1 text-sm text-gray-500">Create a new customer record in the system</p>
                       
@@ -959,7 +959,7 @@ export default function ApiDocs() {
                       </div>
                     </div>
                     
-                    <div className="bg-gray-50 rounded-md p-4 border border-gray-200">
+                    <div className="bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                       <h5 className="text-base font-medium text-gray-900">add_pet</h5>
                       <p className="mt-1 text-sm text-gray-500">Register a new pet associated with an existing owner</p>
                       
@@ -1043,7 +1043,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Create Pet</h4>
                   <p className="mt-1 text-sm text-gray-500">Create a new pet profile in the system.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-green-100 text-green-800 font-medium">POST</span>
                       <span className="ml-2 font-mono">/api/pets</span>
@@ -1098,7 +1098,7 @@ export default function ApiDocs() {
                   <h4 className="text-base font-medium text-gray-900">Update Pet</h4>
                   <p className="mt-1 text-sm text-gray-500">Update an existing pet's information.</p>
                   
-                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                  <div className="mt-2 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                     <div className="flex items-center text-sm">
                       <span className="px-2 py-1 rounded-md bg-yellow-100 text-yellow-800 font-medium">PUT</span>
                       <span className="ml-2 font-mono">/api/pets/{"{id}"}</span>
@@ -1169,7 +1169,7 @@ export default function ApiDocs() {
                 <h3 className="text-lg font-medium text-gray-900">Error Handling</h3>
                 <p className="mt-1 text-sm text-gray-500">The API uses standard HTTP status codes and provides error details in the response body.</p>
                 
-                <div className="mt-4 bg-gray-50 rounded-md p-4 border border-gray-200 overflow-x-auto">
+                <div className="mt-4 bg-gray-50 rounded-md p-4 border border" style={{borderColor:"#e5e7eb"}}>
                   <pre className="text-sm font-mono"><code>{`{
   "error": {
     "code": "service_unavailable",
