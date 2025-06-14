@@ -55,22 +55,6 @@ app.use((req, res, next) => {
 });
 
 // Health check endpoint
-app.get('/health', (_req, res) => {
-    res.status(200).json({
-        status: 'ok',
-        timestamp: new Date().toISOString(),
-        environment: process.env.NODE_ENV || 'development',
-    });
-});
-
-// Database connection test endpoint
-app.get('/db-test', (_req, res) => {
-    if (process.env.DATABASE_URL) {
-        res.status(200).json({ dbConfigured: true, timestamp: new Date().toISOString() });
-    } else {
-        res.status(503).json({ dbConfigured: false, message: 'Database connection not configured' });
-    }
-});
 
  (async () => {
     try {
@@ -113,6 +97,25 @@ app.get('/db-test', (_req, res) => {
         const { setupVite } = await import("./vite");
         await setupVite(app, server);
     }
+
+    // Health check endpoint
+    app.get('/health', (_req, res) => {
+        res.status(200).json({
+            status: 'ok',
+            timestamp: new Date().toISOString(),
+            environment: process.env.NODE_ENV || 'development',
+        });
+    });
+
+    // Database connection test endpoint
+    app.get('/db-test', (_req, res) => {
+        if (process.env.DATABASE_URL) {
+            res.status(200).json({ dbConfigured: true, timestamp: new Date().toISOString() });
+        } else {
+            res.status(503).json({ dbConfigured: false, message: 'Database connection not configured' });
+        }
+    });
+
     // Use PORT env var or default to 3000
     const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
     server.listen(port, '0.0.0.0', () => {
