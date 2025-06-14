@@ -66,7 +66,13 @@ app.use((req, res, next) => {
         log(`Error initializing database: ${error}`);
     }
 
-    const server = await registerRoutes(app);
+    let server;
+    try {
+        server = await registerRoutes(app);
+    } catch (err) {
+        console.error('❌ Failed to register routes:', err);
+        process.exit(1);
+    }
 
     app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
         const status = err.status || err.statusCode || 500;
