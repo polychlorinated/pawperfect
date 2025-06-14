@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { log } from "./vite";
 import { seedDatabase } from "./seed";
 import { updateDB } from "./db-update";
 import cors from "cors";
@@ -86,8 +86,9 @@ app.use((req, res, next) => {
     // setting up all the other routes so the catch-all route
     // doesn't interfere with the other routes
     if (app.get("env") === "development") {
+        const { setupVite } = await import("./vite");
         await setupVite(app, server);
-    } 
+    }
     // Use Replit's port if provided, otherwise default to 5000
     const port = process.env.PORT ? parseInt(process.env.PORT) : 5000;
     server.listen({
