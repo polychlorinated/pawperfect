@@ -54,6 +54,24 @@ app.use((req, res, next) => {
     next();
 });
 
+// Health check endpoint
+app.get('/health', (_req, res) => {
+    res.status(200).json({
+        status: 'ok',
+        timestamp: new Date().toISOString(),
+        environment: process.env.NODE_ENV || 'development',
+    });
+});
+
+// Database connection test endpoint
+app.get('/db-test', (_req, res) => {
+    if (process.env.DATABASE_URL) {
+        res.status(200).json({ dbConfigured: true, timestamp: new Date().toISOString() });
+    } else {
+        res.status(503).json({ dbConfigured: false, message: 'Database connection not configured' });
+    }
+});
+
  (async () => {
     try {
         if (process.env.DB_INIT === 'true') {
