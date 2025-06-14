@@ -10,10 +10,10 @@
     "tailwind": "./bin/tailwindcss",
     "build:css": "./bin/tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "build:client": "npx vite build",
-    "build:server": "npx esbuild server/index.ts --platform=node --bundle --format=esm --external:@babel/preset-typescript --external:../pkg --external:fsevents --external:*.node --external:dotenv --external:dotenv/* --outfile=dist/index.js && mkdir -p dist && cp node_modules/connect-pg-simple/table.sql dist/",
+    "build:server": "npx esbuild server/index.ts --platform=node --bundle --format=cjs --external:@babel/preset-typescript --external:../pkg --external:fsevents --external:*.node --external:dotenv --external:dotenv/* --outfile=dist/index.cjs && mkdir -p dist && cp node_modules/connect-pg-simple/table.sql dist/",
     "build": "npm run build:client && npm run build:server",
     "prestart": "npm run build",
-    "start": "NODE_ENV=production node dist/index.js",
+    "start": "NODE_ENV=production node dist/index.cjs",
     "db:push": "npx dotenv-cli -e .env -- npx drizzle-kit push --config=./drizzle.config.ts",
     "type-check": "tsc --noEmit",
     "db:generate": "npx dotenv-cli -e .env -- npx drizzle-kit generate --config=./drizzle.config.ts",
@@ -118,7 +118,7 @@
     "vite": "^6.3.2"
   },
   "description": "PawPerfect is a dog care management application built with React, Node.js/Express, and PostgreSQL via Drizzle ORM.",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/polychlorinated/pawperfect.git"
