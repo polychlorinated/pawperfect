@@ -54,14 +54,16 @@ app.use((req, res, next) => {
     next();
 });
 
-(async () => {
+ (async () => {
     try {
-        await seedDatabase();
-        log("Database seeded successfully");
-        await updateDB();
-        log("Database schema updated successfully");
+        if (process.env.DB_INIT === 'true') {
+            await seedDatabase();
+            log("Database seeded successfully");
+            await updateDB();
+            log("Database schema updated successfully");
+        }
     } catch (error) {
-        log(`Error seeding database: ${error}`);
+        log(`Error initializing database: ${error}`);
     }
 
     const server = await registerRoutes(app);
