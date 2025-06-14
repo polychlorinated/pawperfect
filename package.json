@@ -118,7 +118,7 @@
     "vite": "^6.3.2"
   },
   "description": "PawPerfect is a dog care management application built with React, Node.js/Express, and PostgreSQL via Drizzle ORM.",
-  "main": "api-test-simple.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/polychlorinated/pawperfect.git"
