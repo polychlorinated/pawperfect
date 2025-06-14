@@ -1,6 +1,6 @@
 import { Server as IOServer, Socket } from 'socket.io';
 import { Server as HTTPServer } from 'http';
-import { log } from './vite';
+import { log } from './utils';
 import { storage } from './storage';
 
 // Configuration for resource optimization

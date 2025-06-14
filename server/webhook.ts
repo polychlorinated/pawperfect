@@ -1,5 +1,5 @@
 import { Request, Response, Router } from "express";
-import { log } from "./vite";
+import { log } from "./utils";
 import crypto from "crypto";
 
 // Webhook subscription interface

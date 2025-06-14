@@ -1,6 +1,6 @@
 import { Request, Response, Router } from "express";
 import { storage } from "./storage";
-import { log } from "./vite";
+import { log } from "./utils";
 
 // Feature flags for resource optimization
 // Default to enabled if not explicitly set to 'false'
