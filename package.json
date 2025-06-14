@@ -10,7 +10,7 @@
     "tailwind": "./bin/tailwindcss",
     "build:css": "./bin/tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
     "build:client": "npx vite build",
-    "build:server": "npx esbuild server/index.ts --platform=node --bundle --format=cjs --external:@babel/preset-typescript --external:../pkg --external:fsevents --external:*.node --external:dotenv --external:dotenv/* --outfile=dist/index.cjs && mkdir -p dist && cp node_modules/connect-pg-simple/table.sql dist/",
+    "build:server": "npx esbuild server/index.ts --platform=node --bundle --format=cjs --external:@babel/preset-typescript --external:../pkg --external:fsevents --external:*.node --external:dotenv --external:dotenv/* --external:vite --external:vite/* --outfile=dist/index.cjs && mkdir -p dist && cp node_modules/connect-pg-simple/table.sql dist/",
     "build": "npm run build:client && npm run build:server",
     "prestart": "npm run build",
     "start": "NODE_ENV=production node dist/index.cjs",

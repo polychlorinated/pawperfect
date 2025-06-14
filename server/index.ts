@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
-import { log } from "./vite";
+import { log } from "./utils";
 import { seedDatabase } from "./seed";
 import { updateDB } from "./db-update";
 import cors from "cors";
@@ -14,16 +14,16 @@ app.use(express.urlencoded({ extended: false }));
 // Configure CORS
 // Configure CORS (use CORS_ORIGINS env var or defaults)
 const allowedOrigins = process.env.CORS_ORIGINS
-    ? process.env.CORS_ORIGINS.split(',').map(o => o.trim())
-    : process.env.NODE_ENV === 'production'
-        ? ['https://your-production-domain.com']
-        : ['http://localhost:5173', 'http://127.0.0.1:5173'];
+  ? process.env.CORS_ORIGINS.split(',').map(o => o.trim())
+  : process.env.NODE_ENV === 'production'
+    ? ['https://your-production-domain.com']
+    : ['http://localhost:5173', 'http://127.0.0.1:5173'];
 app.use(cors({
-    origin: allowedOrigins,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization', 'apiKey', 'x-api-key'],
-    credentials: true,
-    maxAge: 86400
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'apiKey', 'x-api-key'],
+  credentials: true,
+  maxAge: 86400,
 }));
 
 app.use((req, res, next) => {
