@@ -95,13 +95,9 @@ app.use((req, res, next) => {
         const { setupVite } = await import("./vite");
         await setupVite(app, server);
     }
-    // Use Replit's port if provided, otherwise default to 5000
-    const port = process.env.PORT ? parseInt(process.env.PORT) : 5000;
-    server.listen({
-        port,
-        host: "0.0.0.0",
-        reusePort: true,
-    }, () => {
-        log(`serving on port ${port}`);
+    // Use PORT env var or default to 3000
+    const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+    server.listen(port, '0.0.0.0', () => {
+        log(`Server running on port ${port}`);
     });
 })();
