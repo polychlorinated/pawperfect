@@ -1,4 +1,10 @@
-# PawPerfect VPS Deployment Guide
+# PawPerfect
+
+PawPerfect is a dog care management application built with React, Node.js/Express, and PostgreSQL via Drizzle ORM.
+
+For API details, see [API_DOCUMENTATION.md](API_DOCUMENTATION.md).
+
+## VPS Deployment Guide
 
 This guide provides instructions for deploying PawPerfect on your own VPS (Virtual Private Server).
 
