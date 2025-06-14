@@ -12,8 +12,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Configure CORS
+// Configure CORS (use CORS_ORIGINS env var or defaults)
+const allowedOrigins = process.env.CORS_ORIGINS
+    ? process.env.CORS_ORIGINS.split(',').map(o => o.trim())
+    : process.env.NODE_ENV === 'production'
+        ? ['https://your-production-domain.com']
+        : ['http://localhost:5173', 'http://127.0.0.1:5173'];
 app.use(cors({
-    origin: '*',
+    origin: allowedOrigins,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'apiKey', 'x-api-key'],
     credentials: true,
@@ -67,13 +73,10 @@ app.use((req, res, next) => {
         throw err;
     });
 
-    //  Serve built assets from Vite in production
+    // Serve built assets from dist/public in production
     if (process.env.NODE_ENV === 'production') {
         const distPath = path.join(__dirname, '..', 'dist', 'public');
         app.use(express.static(distPath));
-   
-        // Serve MCP files from client/public
-        app.use(express.static(path.join(__dirname, '..', 'client', 'public')));
     }
 
 
